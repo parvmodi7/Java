@@ -1,27 +1,23 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class Javabasic {
     public static void main(String[] args) {
-String s="abcdefgh";
-int vowels = 0;
-int con=0;
-for(int i=0;i<s.length();i++)
-{
-    if(s.charAt(i)=='a'||s.charAt(i)=='i'|| s.charAt(i)=='o'|| s.charAt(i)=='u'|| s.charAt(i)=='e')
-    {
-           vowels++;
+       int a = 0;
+       int b = 1;
+       int n=1;
+       int c=0;
+       num(a,b,n,c);
     }
-    else
+    
+    public static void num(int a, int b , int n,int c)
     {
-     con++;
-    }
-}
-System.out.print(vowels);
-System.out.print(con);
+        if(n>3)
+        {
+            System.out.println(c);
+            return;
+        }
+      c = a+b;
+      num(b,c,n+1,c);
 
-
-
-
-   
     }
 } 
