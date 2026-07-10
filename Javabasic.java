@@ -94,17 +94,98 @@ public class Javabasic {
             }
  secNode.next=null;
         }
-    }
 
+        public void reverseLin()
+        {
+            Node prevNode=head;
+           Node currNode=head.next;
+           while(currNode!=null)
+           {
+            if(head==null || head.next==null)
+            {
+                return;
+            }
+              Node nextNode=currNode.next;
+              currNode.next=prevNode;
+
+              //update
+              prevNode=currNode;
+              currNode=nextNode;
+           }
+           head.next=null;
+           head = prevNode;
+
+        }
+
+        public void Deletenth()
+        {
+            int n = 2;
+            int size=0;
+            Node curr=head;
+            while(curr!=null)
+            {
+                curr=curr.next;
+                size++;
+            }
+            // System.out.println(size);
+            int i = size-n;
+            Node prev=head;
+            int j=1;
+            while(j<i)
+            {
+                prev=prev.next;
+            }
+            prev.next=prev.next.next;
+            // return head;
+        }
+
+        public void deletemnode(String data)
+        {
+            // Node slow=head;
+            // Node fast=head;
+            
+            // while(fast!=null && fast.next!=null)
+            // {
+            //  slow =  head.next;
+            //  fast=head.next.next;
+            // }
+ int size=0;
+            Node curr=head;
+            while(curr!=null)
+            {
+                curr=curr.next;
+                size++;
+            }
+            
+            int limit=size/2;
+            Node prev=head;
+            int i =1;
+           while(i<limit)
+           {
+prev=prev.next;
+           }
+           prev.next=prev.next.next;
+        }
+
+    
+
+    }
+  
+
+    
     // MAIN METHOD HERE
     public static void main(String args[]) {
 
-        LinkedList <String> list=new LinkedList<String>();
+        // LinkedList <String> list=new LinkedList<String>();
         LL list = new LL();
 
         list.addFir("am");
         list.addFir("I");
 list.addlast("parv");
         list.printl();
+        list.reverseLin();
+        list.printl();
+        // list.size();
+
     }
 }
